@@ -2,7 +2,7 @@ job('Aplicacion Node.js Docker DSL desde Digital Ocean') {
     description('Aplicación Node JS Docker DSL para el curso de Jenkins')
     scm {
         git('https://github.com/pkgo1001/nodejsapp.git', 'master') { node ->
-            node / gitConfigName('wilson')
+            node / gitConfigName('pkgo1001')
             node / gitConfigEmail('pokegoacc1001@gmail.com')
         }
     }
