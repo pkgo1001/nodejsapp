@@ -23,6 +23,6 @@ job('Aplicacion Node.js Docker DSL desde Digital Ocean') {
         }
     }
     publishers {
-		emailer('pokegoacc1001@gmail.com', false, true)
+		mailer('pokegoacc1001@gmail.com', false, true)
     }
 }
