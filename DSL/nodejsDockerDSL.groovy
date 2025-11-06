@@ -1,4 +1,4 @@
-job('Aplicacion Node.js Docker DSL') {
+job('Aplicacion Node.js Docker DSL desde Digital Ocean') {
     description('Aplicación Node JS Docker DSL para el curso de Jenkins')
     scm {
         git('https://github.com/pkgo1001/nodejsapp.git', 'master') { node ->
@@ -7,7 +7,7 @@ job('Aplicacion Node.js Docker DSL') {
         }
     }
     triggers {
-        scm('H/7 * * * *')
+        scm('H/1 * * * *')
     }
     wrappers {
         nodejs('nodejs')
@@ -23,22 +23,6 @@ job('Aplicacion Node.js Docker DSL') {
         }
     }
     publishers {
-	slackNotifier {
-            notifyAborted(true)
-            notifyEveryFailure(true)
-            notifyNotBuilt(false)
-            notifyUnstable(false)
-            notifyBackToNormal(true)
-            notifySuccess(true)
-            notifyRepeatedFailure(false)
-            startNotification(false)
-            includeTestSummary(false)
-            includeCustomMessage(false)
-            customMessage(null)
-            sendAs(null)
-            commitInfoChoice('NONE')
-            teamDomain(null)
-            authToken(null)
-        }
+		emailer('pokegoacc1001@gmail.com', false, true)
     }
 }
