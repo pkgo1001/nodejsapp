@@ -1,4 +1,4 @@
-job('Aplicacion Node.js DSL') {
+job('Aplicacion Node.js con DSL desde GIT') {
     description('Aplicación Node JS DSL para el curso de Jenkins')
     scm {
         git('https://github.com/pkgo1001/nodejsapp.git', 'master') { node ->
