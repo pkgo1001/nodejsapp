@@ -7,7 +7,7 @@ job('Aplicacion Node.js DSL') {
         }
     }
     triggers {
-        scm('H/7 * * * *')
+        scm('H/1 * * * *')
     }
     wrappers {
         nodejs('nodejs')
@@ -16,22 +16,6 @@ job('Aplicacion Node.js DSL') {
         shell("npm install")
     }
     publishers {
-	slackNotifier {
-            notifyAborted(true)
-            notifyEveryFailure(true)
-            notifyNotBuilt(false)
-            notifyUnstable(false)
-            notifyBackToNormal(true)
-            notifySuccess(true)
-            notifyRepeatedFailure(false)
-            startNotification(false)
-            includeTestSummary(false)
-            includeCustomMessage(false)
-            customMessage(null)
-            sendAs(null)
-            commitInfoChoice('NONE')
-            teamDomain(null)
-            authToken(null)
-        }
+		mailer('pokegoacc1001@gmail.com', false, true)
     }
 }
